@@ -1,0 +1,12 @@
+photography:
+  name: photography
+  description: Some of the greatest words ever spoken.
+  cover: /assets/images/covers/1.jpg
+design:
+  name: design
+  description: false
+  cover: /assets/images/covers/2.jpg
+tips:
+  name: tips
+  description: A series of short stories that make you think.
+  cover: /assets/images/covers/3.jpg

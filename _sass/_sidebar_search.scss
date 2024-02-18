@@ -1,0 +1,136 @@
+/**
+ * 6. Sidebar, Search
+ * ----------------------------------------------------------------------------
+ */
+.sidebar,
+.site-search {
+  background-color: #fff;
+  border-left: 1px solid #eee;
+  bottom: 0;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  right: -100%;
+  top: 0;
+  -webkit-transition: right .3s, visibility 0s .3s;
+  transition: right .3s, visibility 0s .3s;
+  visibility: hidden;
+  width: 600px;
+  z-index: 999;
+}
+
+.overlay {
+  background-color: transparent;
+  cursor: url(../images/close.png), default;
+  cursor: -webkit-image-set(url(../images/close.png) 1x, url(../images/close@2x.png) 2x), default;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  transition: .3s;
+  visibility: hidden;
+  width: 100%;
+  z-index: 998;
+}
+
+.sidebar-opened .site,
+.search-opened .site {
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  width: 100%;
+  z-index: 997;
+}
+
+.sidebar-opened .sidebar,
+.search-opened .site-search {
+  right: 0;
+  -webkit-transition: right .3s ease-in-out;
+  transition: right .3s ease-in-out;
+  visibility: visible;
+}
+
+.sidebar-opened .overlay,
+.search-opened .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  visibility: visible;
+}
+
+.sidebar-scrollable,
+.search-scrollable {
+  height: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+
+.sidebar .widget-area,
+.search-box {
+  padding-bottom: 30px;
+  padding-top: 90px;
+}
+
+.sidebar .site-navigation,
+.sidebar .widget,
+.search-box-inside {
+  border-top: 1px solid #eee;
+  margin-bottom: 60px;
+  padding: 60px 60px 0;
+}
+
+.sidebar .site-navigation {
+  display: none;
+  float: none;
+}
+
+.sidebar .menu-item {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.sidebar .menu-item a {
+  border-color: transparent;
+}
+
+.sidebar .menu-item a:hover {
+  border-color: #ffea00;
+}
+
+.sidebar .sidebar-toggle,
+.site-search .search-toggle {
+  left: 50%;
+  margin-left: -15px;
+  right: auto;
+  top: 25px;
+}
+
+.search-form {
+  margin-bottom: 15px;
+}
+
+ul.search-results {
+  font: bold 18px/1.5 $font-primary;
+  list-style: none;
+  padding-left: 0;
+}
+
+.search-results li {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+.search-results li .entry-meta {
+  color: #ccc;
+  display: block;
+  font: 12px/1.5 $font-primary;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1%; 
+}

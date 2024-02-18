@@ -1,0 +1,43 @@
+/**
+ * 5. Site Navigation
+ * ----------------------------------------------------------------------------
+ */
+ 
+.site-navigation .menu {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.site-navigation .menu-item {
+  font: 12px/1.5 $font-primary;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.site-header .site-navigation {
+  float: left;
+}
+
+.site-header .menu-item {
+  display: inline-block;
+}
+
+.site-header .menu-item a {
+  border: 0;
+  color: #111;
+  display: inline-block;
+  font-weight: bold;
+  padding: 7px 15px;
+}
+
+.site-header .menu-item a:hover {
+  background-color: #ffea00;
+}
+
+.sidebar .site-navigation .screen-reader-text {
+  clip: auto;
+  height: auto;
+  position: static !important;
+  width: auto;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if site.plugins_dir contains 'jekyll-seo-tag' %}
+    {% include head-seo.html %}
+    {% else %}
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.name | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <link rel="canonical" href="{{ page.url | replace:'index.html', '' | absolute_url }}">
+    {% endif %}
+
+    <!-- Site Favicon -->
+    <link rel="shortcut icon" href="{{ site.url }}/{{ site.baseurl }}{{ site.favicon }}" type="image/png" />
+
+    <!-- Font Embed Code -->
+    <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic%7CMontserrat:400,700" rel="stylesheet" type="text/css" />
+
+    <!-- CSS Styles -->
+    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet">
+</head>
+
+{% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
+<body class="{{ layout }} {% if paginator.page > 1 %}{{ page.class }}{% elsif page.class %}{{ page.class }}{% else %}page-template{% endif %}">
+    <div id="page" class="site">
+        {% include header.html %}
+        {{ content }}
+        {% include search.html %}
+        {% include sidebar.html %}
+        {% include footer-widgets.html %}
+        {% include footer.html %}
+        <div class="overlay"></div>
+    </div><!-- .site -->
+    {% include analytics.html %}
+    <!-- Javascript Assets -->
+    <script src="{{ site.baseurl }}/assets/js/jquery-3.2.1.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/plugins.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    <script>
+        window.simpleJekyllSearch = new SimpleJekyllSearch({
+            searchInput: document.getElementById('search-field'),
+            resultsContainer: document.getElementById('search-results'),
+            json: '{{ site.baseurl }}/search.json',
+            searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a> <span class="entry-meta"><time class="post-date" datetime="{date}">{date}</time></span></li>',
+            noResultsText: 'No results found',
+            limit: 15,
+            fuzzy: false,
+            exclude: ['Welcome']
+        })
+    </script>
+</body>
+</html>

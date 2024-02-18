@@ -1,0 +1,60 @@
+<aside class="footer-widgets">
+    <div class="inner-wide">
+        <div class="widget-area">
+
+            <div class="footer-col first">
+                <section class="widget widget-recent-posts">
+                    <h2 class="widget-title">Recent Articles</h2>
+                    <ul>
+                        {% for post in site.posts limit:3 %}
+                        <li>
+                            {% if post.featured_image %}
+                            <a class="recent-thumb" href="{{ post.url }}" style="background-image: url({% if post.featured_image contains ' :// ' %}{{ post.featured_image }}{% else %}{{ post.featured_image | absolute_url }}{% endif %})">
+                            </a>
+                            {% endif %}
+                            <div class="recent-title">
+                                <a href="{{ post.url | absolute_url }}">{{ post.title }}</a>
+                            </div>
+                            <div class="recent-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div><!-- .first -->
+
+            <!-- Create a sorted array of tags -->
+            {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor
+            %}{%
+            endcapture %} {% assign sortedTags = site_tags | split:',' | sort %}
+            <div class="footer-col middle">
+                <section class="widget widget-tags">
+                    <h2 class="widget-title">Tags</h2>
+                    <div class="tagcloud">
+                        {% for tag in sortedTags %}
+                        <a href='{{ site.baseurl }}/tag/{{ tag | downcase | replace: ' ', '- ' }}/'>{{ tag | camelcase }}</a>
+                        {% endfor %}
+                    </div>
+                </section>
+            </div><!-- .middle -->
+
+            <div class="footer-col last">
+                {% if site.mailchimp_url %}
+                <section class="widget widget-newsletter">
+                    <h2 class="widget-title">Subscribe to {{ site.name }}</h2>
+                    <p>Get the latest and greatest from {{ site.name }} delivered straight to your inbox every week.</p>
+                    <!-- Begin MailChimp Signup Form -->
+                    <div id="mc_embed_signup">
+                        <form action="{{ site.mailchimp_url }}" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                            class="validate gh-subscribe-form" target="_blank" novalidate>
+                            <label for="mce-EMAIL" class="screen-reader-text">Email Address</label>
+                            <input type="email" value="" name="EMAIL" class="required email subscribe-email" id="mce-EMAIL" placeholder="Your email address">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                        </form>
+                    </div>
+                </section>
+                {% endif %}
+            </div><!-- .last -->
+            
+        </div><!-- .widget-area -->
+    </div><!-- .inner-wide -->
+</aside>

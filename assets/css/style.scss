@@ -1,0 +1,43 @@
+---
+---
+
+/**
+ * Curious 1.1.1
+ * By Just Good Themes - https://justgoodthemes.com/
+ */
+/**
+ * Table of Contents
+ * ----------------------------------------------------------------------------
+ * 0. Icons
+ * 1. Reset
+ * 2. General
+ * 3. Structure
+ * 4. Site Header
+ * 5. Site Navigation
+ * 6. Sidebar, Search
+ * 7. Content
+ *   7.1 Posts and Pages
+ *   7.2 Comments
+ *   7.3 Paging Navigation
+ *   7.4 Post Navigation
+ * 8. Footer Widget Area
+ * 9. Widgets
+ * 10. Site Footer
+ * 11. Media Queries
+*/
+
+@import "variables";
+@import "icons";
+@import "reset";
+@import "general";
+@import "structure";
+@import "header";
+@import "navigation";
+@import "sidebar_search";
+@import "content";
+@import "footer_widget_area";
+@import "widgets";
+@import "footer";
+@import "media_queries";
+
+/*# sourceMappingURL=style.css.map */

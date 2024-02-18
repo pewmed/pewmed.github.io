@@ -1,0 +1,120 @@
+/**
+ * 9. Widgets
+ * ----------------------------------------------------------------------------
+ */
+.widget-area {
+  font-size: 16px;
+}
+
+.widget {
+  margin-bottom: 60px;
+}
+
+.widget-area .screen-reader-text,
+.widget-title {
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.widget-recent-posts {
+  font-family: $font-primary;
+}
+
+.widget-recent-posts ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.widget-recent-posts li {
+  border-bottom: 1px solid #eee;
+  color: #ccc;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.recent-title {
+  color: #111;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.recent-title a {
+  border-color: transparent;
+}
+
+.recent-title a:hover {
+  border-color: #ffea00;
+  color: #111;
+}
+
+.recent-date {
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.recent-thumb {
+  background-position: center;
+  background-size: cover;
+  border: 0;
+  float: right;
+  height: 60px;
+  margin-left: 5px;
+  width: 60px;
+}
+
+.widget-instagram .instagram-feed {
+  margin-left: -10px;
+}
+
+.widget-instagram .instagram-item {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  width: 33.333%;
+}
+
+.widget-instagram .instagram-item:nth-child(3n+1) {
+  clear: left;
+}
+
+.widget-tags a {
+  background-color: transparent;
+  border: 2px solid #111;
+  color: #111;
+  display: inline-block;
+  font: bold 12px/1.5 $font-primary;
+  letter-spacing: 1px;
+  margin: 0 10px 10px 0;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.widget-tags a:hover {
+  background-color: #ffea00;
+  border-color: #ffea00;
+  color: #111;
+}
+
+.contacts {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contacts li {
+  margin-bottom: 5px;
+}
+
+.contacts .icon {
+  color: #111;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 2;
+  margin-right: 3px;
+  width: 15px;
+}

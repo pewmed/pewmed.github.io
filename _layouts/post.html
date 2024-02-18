@@ -1,0 +1,159 @@
+---
+layout: default
+disqus: false
+post_class: post-template
+---
+
+<main class="site-main">
+    <div class="site-content">
+        <article class="post">
+            <header class="cover post-header">
+                
+                {% if page.featured_image %}
+                <div class="cover-bg" style="background-image: url({{ site.baseurl }}{{ page.featured_image }})"></div>
+                {% endif %}
+
+                <div class="cover-content">
+                    <div class="inner">
+
+                        {% if page.tags.size > 0 %}
+                        <p class="post-tags">
+                            {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
+                            <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '- ' }}/'>{{ tag | camelcase }}</a>
+                            {% else %}
+                            <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '- ' }}/'>{{ tag | camelcase }}</a>
+                            {% endif %}
+                            {% endfor %}
+                        </p>
+                        {% endif %}
+
+                        <h1 class="post-title">{{ page.title }}</h1>
+
+                        <div class="post-meta">
+                            {% for author in site.data.authors %}
+                            {% if author[1].username == page.author %}
+                            by <span class="post-author">
+                                <a href="{{ site.baseurl }}/author/{{ page.author }}/">{{ author[1].name }}</a>
+                            </span>
+                            {% endif %}
+                            {% endfor %}
+                            on <time class="published" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+                        </div><!-- .post-meta -->
+
+                        <a href="#" class="scroll-down square light">
+                            <span class="icon-down-custom" aria-hidden="true"></span>
+                            <span class="screen-reader-text">Scroll Down</span>
+                        </a>
+
+                    </div><!-- .inner -->
+                </div><!-- .cover-content -->
+            </header><!-- .cover -->
+            <div class="post-content inner">
+                {{content}}
+            </div>
+            <footer class="post-footer inner">
+                <div class="share-post">
+                    <span>Share:</span>
+                    <a class="square" target="_blank"
+                        href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.production_url }}{{ page.url | remove_first: '/' }}">
+                        <i class="icon-twitter" aria-hidden="true"></i>
+                        <span class="screen-reader-text">Twitter</span>
+                    </a>
+                    <a class="square" target="_blank"
+                        href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}">
+                        <i class="icon-facebook" aria-hidden="true"></i>
+                        <span class="screen-reader-text">Facebook</span>
+                    </a>
+                </div><!-- .share-post -->
+                <div class="author-list">
+
+                    <div class="author-list-title">Written by</div>
+                    {% for author in site.data.authors %}
+                    {% if author[1].username == page.author %}
+
+                    <div class="author-box">
+
+                        {% if author[1].picture %}
+                        <img class="author-avatar" src="{{ site.baseurl }}{{ author[1].picture }}"
+                            alt="{{ page.author }}" class="avatar" />
+                        {% endif %}
+
+                        <h2 class="author-title">
+                            <a href="{{ site.baseurl }}author/{{ page.author }}">{{ author[1].name }}</a>
+                        </h2>
+
+                        {% if author[1].bio %}
+                        <p class="author-description">{{ author[1].bio }}</p>
+                        {% else %}
+                        <p class="author-description">Read <a href="{{ site.baseurl }}author/{{ page.author }}">more
+                                posts</a> by this
+                            author.</p>
+                        {% endif %}
+
+                        <div class="author-links">
+
+                            {% if author[1].url %}
+                            <span class="author-website">
+                                <i class="icon-chain" aria-hidden="true"></i>
+                                <a href="{{ author[1].url_full }}" target="_blank" rel="noopener">{{ author[1].url }}</a>
+                            </span>
+                            {% endif %}
+
+                            {% if author[1].facebook %}
+                            <span class="author-facebook">
+                                <i class="icon-facebook" aria-hidden="true"></i>
+                                <a href="https://facebook.com/{{ author[1].facebook }}" target="_blank" rel="noopener">Facebook</a>
+                            </span>
+                            {% endif %}
+
+                            {% if author[1].twitter %}
+                            <span class="author-twitter"><i class="icon-twitter" aria-hidden="true"></i>
+                                <a href="https://twitter.com/{{ author[1].twitter }}" target="_blank" rel="noopener">Twitter</a>
+                            </span>
+                            {% endif %}
+
+                        </div><!-- .author-links -->
+                        {% endif %}
+                        {% endfor %}
+                    </div><!-- .author-box -->
+                </div><!-- .author-list -->
+            </footer>
+        </article>
+        {% if site.mailchimp_url %}
+        {% include newsletter-box.html %}
+        {% endif %}
+        {% include disqus.html %}
+        <nav class="post-navigation">
+            {% if page.next.url %}
+            <a href="{{ site.baseurl }}{{page.next.url}}" class="nav-next">
+                {% if page.next.featured_image_thumbnail %}
+                <div class="nav-bg" style="background-image: url({{ page.next.featured_image_thumbnail }})"></div>
+                {% elsif page.next.featured_image %}
+                <div class="nav-bg" style="background-image: url({{ page.next.featured_image }})"></div>
+                {% else %}
+                {% endif %}
+                <div class="nav-inside">
+                    <span class="nav-before">Next</span>
+                    <span class="nav-title">{{page.next.title}}</span>
+                    <span class="nav-date">{{page.next.date | date: "%B %-d, %Y"}}</span>
+                </div>
+            </a>
+            {% endif %}
+            {% if page.previous.url %}
+            <a href="{{ site.baseurl }}{{page.previous.url}}" class="nav-previous">
+                {% if page.previous.featured_image_thumbnail %}
+                <div class="nav-bg" style="background-image: url({{ page.previous.featured_image_thumbnail }})"></div>
+                {% elsif page.previous.featured_image %}
+                <div class="nav-bg" style="background-image: url({{ page.previous.featured_image }})"></div>
+                {% else %}
+                {% endif %}
+                <div class="nav-inside">
+                    <span class="nav-before">Previous</span>
+                    <span class="nav-title">{{page.previous.title}}</span>
+                    <span class="nav-date">{{page.previous.date | date: "%B %-d, %Y"}}</span>
+                </div>
+            </a>
+            {% endif %}
+        </nav><!-- .post-navigation -->
+    </div><!-- .site-content -->
+</main><!-- .site-main -->

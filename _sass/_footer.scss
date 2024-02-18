@@ -1,0 +1,81 @@
+/**
+ * 10. Site Footer
+ * ----------------------------------------------------------------------------
+ */
+.site-footer {
+  background-color: $black;
+}
+
+.footer-top {
+  border-bottom: 1px solid #252525;
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.footer-top .inner-wide {
+  position: relative;
+}
+
+.offsite-links {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-right: 90px;
+  a {
+    background-color: #252525;
+    color: #ccc;
+    display: block;
+    -webkit-flex: 0 0 40px;
+    -ms-flex: 0 0 40px;
+    flex: 0 0 40px;
+    font-size: 14px;
+    height: 40px;
+    line-height: 2.9;
+    margin: 0 3px 3px 0;
+    text-align: center;
+    &:hover {
+      background-color: $color-accent;
+      color: $black;
+    }
+  }
+}
+
+.offsite-links [class^="icon-"],
+.offsite-links [class*=" icon-"] {
+  vertical-align: middle;
+}
+
+.footer-top .top-link {
+  background-color: $color-accent;
+  border-color: transparent;
+  color: $black;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  &:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+  }
+}
+
+.site-info {
+  color: #666;
+  font: 10px/1.5 $font-primary;
+  letter-spacing: 1px;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  a {
+    border-color: transparent;
+    color: $color-accent;
+    &:hover {
+      border-color: #fff;
+      color: #fff;
+    }
+  }
+}

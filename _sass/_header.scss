@@ -1,0 +1,65 @@
+/**
+ * 4. Site Header
+ * ----------------------------------------------------------------------------
+ */
+.site-header {
+  background-color: #fff;
+  padding-bottom: 25px;
+  padding-top: 25px;
+}
+
+.site-header .inner-wide {
+  position: relative;
+}
+
+.post-template .site-header,
+.page-template .site-header {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.site-title {
+  font-family: $font-primary;
+  font-size: 28px;
+  font-weight: bold;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  text-transform: uppercase;
+}
+
+.site-logo,
+.site-title {
+  float: left;
+  margin: 0 30px 0 0;
+}
+
+.site-logo a,
+.site-title a {
+  border: 0;
+  color: $black;
+}
+
+.site-logo img {
+  max-height: 50px;
+}
+
+.sidebar-toggle,
+.search-toggle {
+  border: 0;
+  color: $black;
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  position: absolute;
+  right: 30px;
+  text-align: center;
+  top: 0;
+  width: 30px;
+}
+
+.search-toggle {
+  font-size: 21px;
+  line-height: 1.6;
+  margin-right: 40px;
+}

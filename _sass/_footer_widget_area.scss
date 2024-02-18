@@ -1,0 +1,24 @@
+/**
+ * 8. Footer Widget Area
+ * ----------------------------------------------------------------------------
+ */
+.footer-widgets {
+  border-top: 1px solid #eee;
+}
+
+.footer-widgets .widget-area {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.footer-widgets .footer-col {
+  display: table-cell;
+  padding: 60px 60px 30px;
+  width: 33.333%;
+}
+
+.footer-widgets .middle {
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+}

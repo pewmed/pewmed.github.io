@@ -1,0 +1,28 @@
+---
+layout: default
+title: Home
+class: 'home-template'
+---
+
+<main class="site-main">
+    <div id="content" class="site-content inner-wide">
+
+        {% if page.url == "/" %}
+            {% include featuredbox.html %}
+        {% endif %}
+
+        <!-- Posts Index -->
+        <div class="post-grid">
+            {% for post in paginator.posts %}
+                {% include postbox.html %}
+            {% endfor %}
+        </div><!-- .post-grid -->
+        <!-- Pagination-->
+        {% include pagination.html %}
+    </div><!-- .site-content -->
+</main><!-- .site-main -->
+
+
+
+
+
